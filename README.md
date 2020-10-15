@@ -157,9 +157,7 @@ Update again seems like it has a lot going on but we can break it down to three 
 ### Delete
 
 ```
-setItems(prevState => {
-  prevState.filter(item => item.id !== deletedId)
-})
+setItems(prevState => prevState.filter(item => item.id !== deletedId))
 ```
 
 Delete is pretty similar to update here except that we are filtering out our deleted item. We only want the items that don't match the id of the one we deleted.
