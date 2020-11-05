@@ -135,7 +135,7 @@ This one is pretty simple since it only needs to set up our initial state.
 ### Create
 
 ```
-setItems(prevState => ([...prevState, newItem]))
+setItems(prevState => [...prevState, newItem])
 ```
 
 State is immutable and we can't change it. However we _can_ replace state with something new. This is where `prevState` comes in handy. In this `setItems`, we are replacing `items` with a new array. Inside that array, we spread out all the contents of the items that were in state previously and add our new item.
@@ -143,7 +143,7 @@ State is immutable and we can't change it. However we _can_ replace state with s
 ### Update
 
 ```
-setItems(prevState => (prevState.map(item => {
+setItems(prevState => prevState.map(item => {
   return item.id === updatedId ? newItem : item
 }))
 ```
